@@ -23,15 +23,15 @@ public class ZQTree {
 		System.out.println("processing...");
 		String dir = "";
 		//		dir = "D:\\";
-		dir = "C:\\_QJY\\MyDevelop\\MyJava\\ZQTree";
+		//		dir = "C:\\_QJY\\MyDevelop\\MyJava\\ZQTree";
 
 		//----------------从外部接收数据 通过命令行传参数--------------------------------------
 		//---命令行传过来的参数 String args[]
 		//---(注意文件夹中不能出现空格,否则你的路径名会被split(" ")切割放进数组里,所以这里要拼接一下,以防万一,)
-		//		for (String s : args) {
-		//			dir += s.replace("\\", "\\\\") + " ";
-		//		}
-		//		dir = dir.trim();
+		for (String s : args) {
+			dir += s.replace("\\", "\\\\") + " ";
+		}
+		dir = dir.trim();
 		//------------------------------------------------------
 		File targetFile = new File(dir + "\\zqtree-"
 				+ new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date(System.currentTimeMillis())) + ".html");
@@ -77,6 +77,7 @@ public class ZQTree {
 		print.println("	                    \"id\": " + thisId + ",");
 		print.println("	                    \"name\": \"" + file.getName() + "\",");
 		print.println("	                    \"parentId\": " + parentID + ",");
+		print.println("	                    \"url\": \"" + file.getAbsolutePath().replace("\\", "/") + "\",");
 
 		print.println("	                }, ");
 
