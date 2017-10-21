@@ -4,4 +4,4 @@
 
 截图-->
 
-![screenshots here](https://github.com/anuoQ/ZQTree/tree/master/screenshots/zqtree.gif)
+![screenshots here](https://github.com/qjytop/ZQTree/blob/master/screenshots/zqtree.gif)
